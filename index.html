@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculate CO2 emissions for flights between airports">
+    
+    <title>Flight CO2 Emissions Calculator</title>
+</head>
+<body>
+
+        <header>
+            <h1>Flight CO₂ Emissions Calculator</h1>
+        </header>
+        
+        <main>
+            <!-- User input controls section -->
+            <section class="controls-container">
+                <div class="form-group">
+                    <label for="departure-airport">Departure Airport</label>
+                    <select id="departure-airport">
+
+                        <option value="" disabled selected>Select departure airport</option>
+
+                        <option value="ATL">Atlanta International Airport (ATL)</option>
+                        <option value="LHR">London Heathrow Airport (LHR)</option>
+                        <!-- 
+                        Just two airports for initial testing
+                        Airport codes reference: https://www.iata.org/en/publications/directories/code-search/ 
+                        -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="arrival-airport">Arrival Airport</label>
+
+                    <select id="arrival-airport">
+                        <option value="" disabled selected>Select arrival airport</option>
+
+                        <option value="ATL">Atlanta International Airport (ATL)</option>
+                        <option value="LHR">London Heathrow Airport (LHR)</option>
+                    </select>
+                </div>
+
+                <button type="button" id="calculate-button">Calculate Emissions</button>
+            </section>
+
+            <!-- Canvas container for map display -->
+            <section class="canvas-container">
+                <canvas id="myCanvas" width="800" height="400">
+                    <!-- 
+                    Canvas element for drawing the map and plotted routes
+                    Canvas reference: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+                    -->
+                </canvas>
+            </section>
+
+            <!-- Results section to display flight emissions calculations -->
+            <section class="results-container">
+                <div id="error-message"></div>
+                <div id="aircraft-info"></div>
+            </section>
+        </main>
+
+    </div>
+
+</body>
+</html>
