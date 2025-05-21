@@ -103,6 +103,7 @@ function drawLine(p1, p2) {
  * @param {string} label - Text to display
  * @param {string} color - Color of the text
  */
+
 function drawLabel({ x, y }, label, color) {
     ctx.font = "14px Arial";
     ctx.fillStyle = color;
@@ -110,8 +111,51 @@ function drawLabel({ x, y }, label, color) {
 }
 
 /**
+ * Load the world map image
+ * Image source: Natural Earth / NASA Blue Marble adapted to equirectangular projection
+ * Original source: https://visibleearth.nasa.gov/collection/1484/blue-marble
+ * License: Public domain (NASA imagery)
+ */
+
+const mapImage = new Image();
+mapImage.src = 'assets/images/1280px-Equirectangular_projection_SW.jpg';
+
+// Handle image loading
+mapImage.onload = function() {
+    ctx.drawImage(mapImage, 0, 0, canvas.width, canvas.height);
+};
+
+/**
+ * Draw the distance label at the midpoint of the route line
+ * @param {object} p1 - {x, y} start point
+ * @param {object} p2 - {x, y} end point
+ * @param {number} distance - Distance in kilometers
+ */
+
+function drawDistanceLabel(p1, p2, distance) {
+    // Calculate midpoint of the line
+    const midX = (p1.x + p2.x) / 2;
+    const midY = (p1.y + p2.y) / 2;
+
+    ctx.font = "14px Arial";
+    const text = `${distance} km`;
+    const textWidth = ctx.measureText(text).width;
+
+    // Draw background rectangle for better readability
+    ctx.fillStyle = "yellow";
+    ctx.fillRect(midX - textWidth / 2 - 5, midY - 10, textWidth + 10, 20);
+
+    // Draw text
+    ctx.fillStyle = "black";
+    ctx.fillText(text, midX - textWidth / 2, midY + 5);
+}
+
+
+
+/**
  * Display the route on the map canvas
  */
+
 function displayMap() {
     const departureCode = document.getElementById("departure-airport").value;
     const arrivalCode = document.getElementById("arrival-airport").value;
@@ -127,6 +171,10 @@ function displayMap() {
         const departureCoords = airportCoordinates[departureCode];
         const arrivalCoords = airportCoordinates[arrivalCode];
         
+        // Clear canvas and draw the map image
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(mapImage, 0, 0, canvas.width, canvas.height);
+
         // Convert geographic coordinates to canvas coordinates
         const depCanvasCoords = convertLatLonToCanvas(departureCoords);
         const arrCanvasCoords = convertLatLonToCanvas(arrivalCoords);
@@ -142,6 +190,9 @@ function displayMap() {
         const distanceKm = Math.round(calculateDistance(departureCoords, arrivalCoords));
         document.getElementById("aircraft-info").textContent = 
             `Distance: ${distanceKm} km`;
+        
+        // Add distance label on the route
+        drawDistanceLabel(depCanvasCoords, arrCanvasCoords, distanceKm);
     }
 }
 
