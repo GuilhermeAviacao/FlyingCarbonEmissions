@@ -17,45 +17,47 @@
         
         <main>
             <section class="controls-container">
-                <div class="form-group">
-                    <label for="departure-airport">Departure Airport</label>
-                    <select id="departure-airport">
-                        <option value="" disabled selected>Select departure airport</option>
-                        
-                        <option value="ATL">Atlanta International Airport (ATL)</option>
-                        <option value="GRU">São Paulo-Guarulhos International Airport (GRU)</option>
-                        <option value="DEN">Denver International Airport (DEN)</option>
-                        <option value="JNB">Johannesburg International Airport (JNB)</option>
-                        <option value="LAX">Los Angeles International Airport (LAX)</option>
-                        <option value="PEK">Beijing International Airport (PEK)</option>
-                        <option value="DXB">Dubai International Airport (DXB)</option>
-                        <option value="LHR">London Heathrow Airport (LHR)</option>
-                        <option value="SYD">Sydney International Airport (SYD)</option>
-                        <option value="CDG">Paris-Charles de Gaulle International Airport (CDG)</option>
+                <div class="form-row">
+                    <div class="form-group flex-item">
+                        <label for="departure-airport">Departure Airport</label>
+                        <select id="departure-airport">
+                            <option value="" disabled selected>Select departure airport</option>
+                            
+                            <option value="ATL">Atlanta International Airport (ATL)</option>
+                            <option value="GRU">São Paulo-Guarulhos International Airport (GRU)</option>
+                            <option value="DEN">Denver International Airport (DEN)</option>
+                            <option value="JNB">Johannesburg International Airport (JNB)</option>
+                            <option value="LAX">Los Angeles International Airport (LAX)</option>
+                            <option value="PEK">Beijing International Airport (PEK)</option>
+                            <option value="DXB">Dubai International Airport (DXB)</option>
+                            <option value="LHR">London Heathrow Airport (LHR)</option>
+                            <option value="SYD">Sydney International Airport (SYD)</option>
+                            <option value="CDG">Paris-Charles de Gaulle International Airport (CDG)</option>
+                        </select>
+                    </div>
 
-                    </select>
+                    <div class="form-group flex-item">
+                        <label for="arrival-airport">Arrival Airport</label>
+                        <select id="arrival-airport">
+                            <option value="" disabled selected>Select arrival airport</option>
+                            
+                            <option value="ATL">Atlanta International Airport (ATL)</option>
+                            <option value="GRU">São Paulo-Guarulhos International Airport (GRU)</option>
+                            <option value="DEN">Denver International Airport (DEN)</option>
+                            <option value="JNB">Johannesburg International Airport (JNB)</option>
+                            <option value="LAX">Los Angeles International Airport (LAX)</option>
+                            <option value="PEK">Beijing International Airport (PEK)</option>
+                            <option value="DXB">Dubai International Airport (DXB)</option>
+                            <option value="LHR">London Heathrow Airport (LHR)</option>
+                            <option value="SYD">Sydney International Airport (SYD)</option>
+                            <option value="CDG">Paris-Charles de Gaulle International Airport (CDG)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group button-item">
+                        <button type="button" id="calculate-button">Calculate Emissions</button>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="arrival-airport">Arrival Airport</label>
-                    <select id="arrival-airport">
-                        <option value="" disabled selected>Select arrival airport</option>
-                        
-                        <option value="ATL">Atlanta International Airport (ATL)</option>
-                        <option value="GRU">São Paulo-Guarulhos International Airport (GRU)</option>
-                        <option value="DEN">Denver International Airport (DEN)</option>
-                        <option value="JNB">Johannesburg International Airport (JNB)</option>
-                        <option value="LAX">Los Angeles International Airport (LAX)</option>
-                        <option value="PEK">Beijing International Airport (PEK)</option>
-                        <option value="DXB">Dubai International Airport (DXB)</option>
-                        <option value="LHR">London Heathrow Airport (LHR)</option>
-                        <option value="SYD">Sydney International Airport (SYD)</option>
-                        <option value="CDG">Paris-Charles de Gaulle International Airport (CDG)</option>
-
-                    </select>
-                </div>
-
-                <button type="button" id="calculate-button">Calculate Emissions</button>
             </section>
 
              <!-- Canvas container for map display -->
