@@ -22,7 +22,6 @@
                         <label for="departure-airport">Departure Airport</label>
                         <select id="departure-airport">
                             <option value="" disabled selected>Select departure airport</option>
-                            
                             <option value="ATL">Atlanta International Airport (ATL)</option>
                             <option value="GRU">São Paulo-Guarulhos International Airport (GRU)</option>
                             <option value="DEN">Denver International Airport (DEN)</option>
@@ -40,7 +39,6 @@
                         <label for="arrival-airport">Arrival Airport</label>
                         <select id="arrival-airport">
                             <option value="" disabled selected>Select arrival airport</option>
-                            
                             <option value="ATL">Atlanta International Airport (ATL)</option>
                             <option value="GRU">São Paulo-Guarulhos International Airport (GRU)</option>
                             <option value="DEN">Denver International Airport (DEN)</option>
@@ -60,16 +58,16 @@
                 </div>
             </section>
 
-             <!-- Canvas container for map display -->
+            <!-- Canvas container for map display -->
             <section class="canvas-container">
                 <canvas id="myCanvas" width="800" height="400"></canvas>
-                    <!-- 
+                 <!-- 
                     Canvas element for drawing the map and plotted routes
                     Canvas reference: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
                     -->
             </section>
 
-             <!-- Results section to display flight emissions calculations -->
+            <!-- Results section to display flight emissions calculations -->
             <section class="results-container">
                 <div id="error-message"></div>
                 <div id="aircraft-info"></div>
