@@ -1,3 +1,6 @@
+/*jshint esversion: 6 */
+"use strict";
+
 // Coordinates of each airport by IATA code
 // Data source: Airport coordinates from https://ourairports.com/data/
 const airportCoordinates = {
@@ -49,7 +52,7 @@ const aircraftCategories = {
 };
 
 /**
- * Convertion of degrees to radians
+ * Conversion of degrees to radians
  * @param {number} deg - Angle in degrees
  * @return {number} Angle in radians
  */
@@ -60,7 +63,7 @@ function toRadians(deg) {
 /**
  * Calculate the great-circle distance between two airports using Haversine formula
  * Reference: Haversine formula implementation adapted from
- * https://www.movable-type.co.uk/scripts/latlong.html * 
+ * https://www.movable-type.co.uk/scripts/latlong.html
  * @param {object} coord1 - {lat, lon} of first airport
  * @param {object} coord2 - {lat, lon} of second airport
  * @return {number} Distance in kilometers
